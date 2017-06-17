@@ -55,10 +55,10 @@ angular.module('xrpcJsonApp', ['ngRoute', 'angular-jsonrpc-client'])
       controller: 'macparCtrl',
       controllerAs: 'macpar'
     })
-    .when('/devemu', {
-      templateUrl: 'views/devemu.html',
-      controller: 'devemuCtrl',
-      controllerAs: 'devemu'
+    .when('/postext', {
+      templateUrl: 'views/postext.html',
+      controller: 'postextCtrl',
+      controllerAs: 'postext'
     })
     .otherwise({
       redirectTo: '/'
