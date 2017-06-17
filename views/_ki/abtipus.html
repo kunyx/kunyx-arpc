@@ -1,0 +1,27 @@
+<p> Doc. type </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<table cellspacing="5" cellpadding="5" width="100%">
+    <tr>
+        <td>
+            <label for="nev"> Name: </label>
+            <input id="nev" ng-model="bt_nev" />
+        </td>
+        <td>
+        	<label for="kod"> Type id: </label>
+        	<input id="kod" ng-model="bt_kod" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button ng-click="abtipusSlt();" class="btn btn-primary">Find</button>
+        </td>
+        <td> 
+            <button ng-click="abtipusUpd();" class="btn btn-warning">Update</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>

@@ -1,0 +1,80 @@
+<p> Customer </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<table cellspacing="5" cellpadding="5" width="100%">
+    <tr>
+        <td>
+            <label for="neve"> Name: </label>
+            <input id="neve" ng-model="v_neve" />
+        </td>
+        <td>
+            <label for="kod"> Id: </label>
+            <input id="kod" ng-model="v_kod" />
+        </td>
+        <td>
+            <label for="cid"> Company id: </label>
+            <input id="cid" ng-model="v_cid" />
+        </td>
+        <td>
+            <label for="esz"> Permit number: </label>
+            <input id="esz" ng-model="v_esz" />
+        </td>
+        <td>
+            <label for="cim"> Address: </label>
+            <input id="cim" ng-model="v_cim" />
+        </td>
+        <td>
+            <label for="szc"> Delivery address: </label>
+            <input id="szc" ng-model="v_szc" />
+        </td>
+        <td>
+            <label for="emsz"> Permit number: </label>
+            <input id="emsz" ng-model="v_emsz" />
+        </td>
+        <td>
+            <label for="kpcs"> Contact: </label>
+            <input id="kpcs" ng-model="v_kpcs" />
+        </td>
+        <td>
+            <label for="tel"> Phone number: </label>
+            <input id="tel" ng-model="v_tel" />
+        </td>
+        <td>
+            <label for="mail"> Email: </label>
+            <input id="mail" ng-model="v_mail" />
+        </td>
+        <td>
+            <label for="hnap"> Days: </label>
+            <input id="hnap" ng-model="v_hnap" />
+        </td>
+        <td>
+            <label for="hitelk"> Loan: </label>
+            <input id="hitelk" ng-model="v_hitelk" />
+        </td>
+        <td>
+            <label for="hitelm"> Loan: </label>
+            <input id="hitelm" ng-model="v_hitelm" />
+        </td>
+        <td>
+            <p> User: {{v_dbu}} </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button ng-click="ugyfelSlt();" class="btn btn-primary">Find</button>
+        </td>
+        <td> 
+            <button ng-click="ugyfelUpd();" class="btn btn-warning">Update</button>
+        </td>
+        <td>
+            <button ng-click="ugyfelIns();" class="btn btn-warning">Add</button>
+        </td>
+        <td>
+            <button ng-click="ugyfelDel();" class="btn btn-warning">Delete</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>

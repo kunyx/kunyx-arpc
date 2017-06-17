@@ -1,0 +1,52 @@
+<p> Company </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<table cellspacing="5" cellpadding="5" width="100%">
+    <tr>
+        <td>
+            <label for="nev"> Name: </label>
+            <input id="nev" ng-model="c_nev" />
+        </td>
+        <td>
+            <label for="kod"> Id: </label>
+            <input id="kod" ng-model="c_kod" />
+        </td>
+        <td>
+            <label for="oid"> Country code: </label>
+            <input id="oid" ng-model="c_oid" />
+        </td>
+        <td>
+            <label for="asz"> Tax number: </label>
+            <input id="asz" ng-model="c_asz" />
+        </td>
+        <td>
+            <label for="iban"> IBAN: </label>
+            <input id="iban" ng-model="c_iban" />
+        </td>
+        <td>
+            <label for="bank"> Bank: </label>
+            <input id="bank" ng-model="c_bank" />
+        </td>
+        <td>
+            <p> User: {{c_dbu}} </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button ng-click="ceginfoSlt();" class="btn btn-primary">Find</button>
+        </td>
+        <td> 
+            <button ng-click="ceginfoUpd();" class="btn btn-warning">Update</button>
+        </td>
+        <td>
+            <button ng-click="ceginfoIns();" class="btn btn-warning">Add</button>
+        </td>
+        <td>
+            <button ng-click="ceginfoDel();" class="btn btn-warning">Delete</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>

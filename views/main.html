@@ -1,0 +1,244 @@
+<p>
+  <a class="btn btn-lg btn-success" ng-href="#/">Kunyx System<span class="glyphicon glyphicon-ok"></span></a>
+</p>
+<tabs>
+  <pane title="About Sytem">
+    <div>
+      <table  frame="VOID"  cols="1"  rules="NONE"  border="0"  cellspacing="0">
+        <colgroup><col></colgroup>
+        <tbody  class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+          <tr>
+            <td  class="help_text"  align="LEFT"> This is the simplified free
+              version of Kunyx System which is suitable for using in small
+              shops. <br>
+              To use this version of Kunyx System you have to login with the
+              user name and password (test/test). In this version the user name
+              and password cannot be changed. This version is suitable for shops
+              with only one point-of-sale. The hardware that you need have a
+              POS, thermal printer,a bar-code reader and a customer display. The
+              software elements built into Kunyx database, web-server, POS
+              application and a simplified back-office for managing basic data.
+              When the user logs in the navigation bar appears at the very top
+              of this web-app (Help, VAT, Group, Product, Shop info, Data
+              backup). </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT"> A more advanced version of
+              Kunyx System has much more features and for example can add new
+              users and change passwords. This version is charged on an annual
+              subscription basis. The adventage of the advanced version is that
+              it has lot of useful back-office functionalities for managing data
+              like stock, sales tax, sales slip and counter-party data. With the
+              advanced version, support is provided by the Kunyx System team for
+              the subscription period of time by email and phone. This version
+              can use more than one point-of-sale in the same shop with
+              different operators by using user management to add further users.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </pane>
+  <pane title="Stock record guide">
+    <div>
+      <table  frame="VOID"  cols="1"  rules="NONE"  border="0"  cellspacing="0">
+        <colgroup><col></colgroup>
+        <tbody  class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Menus:</h4>
+              <br>
+              VAT menu - provides management of value-added taxes.<br>
+              Group menu - provides management of products categories.<br>
+              Product menu - provides management of products.<br>
+              Shop data menu - provides management of data which are compulsory
+              on receipt.<br>
+              Login menu - provides authorization of this web-app.<br>
+              Help menu - this manual.<br>
+            </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Buttons:</h4>
+              <br>
+              <button  class="button find">Find</button> - button is intended to
+              select specified data by filtering them.<br>
+              <button  class="button update">Update</button> - button is
+              intended to save changed data which already exists.<br>
+              <button  class="button add">Add</button>- button is intended to
+              save new data.<br>
+              <button  class="button delete">Delete</button> - button is
+              intended to delete specified data.<br>
+            </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Login menu:</h4>
+              <br>
+              The successfully logged-in user can start to type in VAT, group,
+              product and shop details and save data using Add or Update
+              buttons. The data entered will be saved into the database of Kunyx
+              System. This version is for single user only and this is the
+              "test" user with password "test". </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Shop info menu:</h4>
+              <br>
+              By clicking on the Shop data menu at the navigation bar you can
+              navigate to the page where shop details are saved. Filling up the
+              input fields with shop details and clicking on the Update button
+              will save the data you have entered into Kunyx System's database.
+              Important! - The shop details will appear on the receipt and
+              therefore must be correct and this is entirely the responsibility
+              of the person who running the shop. </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>VAT menu:</h4>
+              <br>
+              Clicking on this menu will take you to the VAT management page. <br>
+              All products must have tax rates and as consequence of this is
+              that before specifying the product the VAT rate must be specified.
+              The current standard VAT rate in the UK is 20% (most goods and
+              services) but there are reduced rate 5% and zero rate 0%. When
+              filling up the form for submitting Tax rate the rule is that VAT
+              id can be any character but must be unique. One scenario could be:
+              A for 0%, B for 5% and C for 20% but bear in mind that after
+              attaching VAT to some product and starting to use it in POS and
+              making sales the value-added tax will be calculated and saved in
+              database. The saved calculated value-added tax can be queried for
+              any specified period provided in the last field using the Find
+              button. The last input field is optional and can be used for
+              providing extra information, it can be entirely ignored when using
+              Add/Update. It is important to remember that the last field has
+              crucial role in finding out how much the is amount for specified
+              VAT. </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Group menu:</h4>
+              <br>
+              Using Group is not compulsory, but it makes the product management
+              easier. Just click on the Group menu and provide an ID and
+              description for the group (a product category). Type in a choice
+              of name will properly describe that group. The group ID has to be
+              5 characters and must be unique. </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Product menu:</h4>
+              <br>
+              If you want to add a new product to your stock, just click on the
+              product menu to do so. It is very important fact that this action
+              must be preceded by providing the right VAT and proper Group. As
+              mentioned before VAT is compulsory for every product and to have
+              group for product is just recommendation. The other required
+              fields on this form are short name, long name, bar-code and the
+              price of the product. the short name will appear on the receipt.
+              The long name is the name of the product. Bar-code or ID is the
+              product's bar-code or unique ID. Price is the product's gross
+              price. By clicking on the Add button the product details will be
+              saved to the database. </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT"> Data backup menu:<br>
+              This menu is usful ..... </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </pane>
+  <pane title="POS-X guide">
+    <div>
+      <table  frame="VOID"  cols="1"  rules="NONE"  border="0"  cellspacing="0">
+        <colgroup><col></colgroup>
+        <tbody  class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Login menu:</h4>
+              <br>
+              That is the start page if you turn on your point of sale (POS). To
+              use your POS you have to log in, with your user name and your
+              password. </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4></h4>
+              <h4>Buttons:</h4>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Storno:</h4>
+              <p><br>
+              </p>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Product:</h4>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT"> <br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </pane>
+  <pane title="POS-Y guide">
+    <div>
+      <table  frame="VOID"  cols="1"  rules="NONE"  border="0"  cellspacing="0">
+        <colgroup><col></colgroup>
+        <tbody  class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Login menu:</h4>
+              <br>
+              That is the start page if you turn on your point of sale (POS). To
+              use your POS you have to log in, with your user name and your
+              password. </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4></h4>
+              <h4>Buttons:</h4>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Storno:</h4>
+              <p><br>
+              </p>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT">
+              <h4>Product:</h4>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td  class="help_text"  align="LEFT"> <br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </pane>
+</tabs>
+
+  </div>
+  <div  class="row marketing"> </div>
+

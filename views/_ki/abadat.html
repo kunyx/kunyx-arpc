@@ -1,0 +1,44 @@
+<p> Doc. data </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<table cellspacing="5" cellpadding="5" width="100%">
+    <tr>
+        <td>
+            <label for="kod"> Id: </label>
+            <input id="kod" ng-model="ba_kod" />
+        </td>
+        <td>
+            <label for="pid"> Customer id: </label>
+            <input id="pid" ng-model="ba_pid" />
+        </td>
+        <td>
+            <label for="did"> Type id: </label>
+            <input id="did" ng-model="ba_did" />
+        </td>
+        <td>
+            <label for="bertek"> Total: </label>
+            <input id="bertek" ng-model="ba_bertek" />
+        </td>
+        <td>
+            <p> User: {{ba_dbu}} </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button ng-click="abadatSlt();" class="btn btn-primary">Find</button>
+        </td>
+        <td> 
+            <button ng-click="aabadatUpd();" class="btn btn-warning">Update</button>
+        </td>
+        <td>
+            <button ng-click="abadatIns();" class="btn btn-primary">Add</button>
+        </td>
+        <td> 
+            <button ng-click="abadatDel();" class="btn btn-warning">Delete</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>

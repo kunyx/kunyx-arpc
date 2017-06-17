@@ -1,0 +1,51 @@
+<p> VAT </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <input class="input" placeholder="VAT id:" ng-model="kod" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <input class="input" placeholder="Tax rate:" ng-model="afa" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <input class="input" placeholder="Period:" ng-model="inf" />
+            </div>    
+        </div> 
+        <br>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <button ng-click="taxkeySlt();" class="button find">Find</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <button ng-click="taxkeyUpd();" class="button update">Update</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <button ng-click="taxkeyIns();" class="button add">Add</button>
+            </div> 
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <button ng-click="taxkeyDel();" class="button delete">Delete</button>
+            </div>
+        </div>   
+    </div>
+</form>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <th>VAT id&nbsp;</th>
+    <th>Tax rate &nbsp;</th>
+    <th>VAT information&nbsp;</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in result">
+        <td><button ng-click=selectTxk(item)> {{item.kod}} </button></td>
+        <td>{{item.afa}}</td>
+        <td>{{item.inf}}</td>
+    </tr>
+    </tbody>
+</table>
+<!--
+<p> result {{result}} </p>
+<p> error {{error}} </p>
+-->

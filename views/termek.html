@@ -1,0 +1,74 @@
+<p> Product </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<div class="container-fluid">
+
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <label> VAT id: {{txk}} </label>
+            <button ng-click="changeTxk();" class="button cancel">Change</button>
+</div> 
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <label> Category id: {{grp}} </label>
+            <button ng-click="changeGrp();" class="button cancel">Change</button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Id / Barcode:" ng-model="kod" />
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Product Name:" ng-model="neve" />
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Name on Receipt" ng-model="nev" />
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Gross Price" ng-model="ebear" />
+</div>
+</div> 
+
+<br>
+
+<div class="row">
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+    <button ng-click="termekSlt();" class="button find">Find</button>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+    <button ng-click="termekUpd();" class="button update">Update</button>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+    <button ng-click="termekIns();" class="button add">Add</button>
+</div> 
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+    <button ng-click="termekDel();" class="button delete">Delete</button>
+</div>    
+</div>   
+</div>
+       
+</form>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <th>Id / Barcode:&nbsp;</th>
+    <th>Product Name&nbsp;</th>
+    <th>Name on receipt&nbsp;</th>
+    <th>Gross Price&nbsp;</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in result">
+        <td><button ng-click=selectPrd(item)> {{item.kod}} </button></td>
+        <td>{{item.neve}}</td>
+        <td>{{item.nev}}</td>
+        <td>{{item.ebear}}</td>
+    </tr>
+    </tbody>
+</table>
+<!--
+<p> result {{result}} </p>
+<p> error {{error}} </p>
+-->

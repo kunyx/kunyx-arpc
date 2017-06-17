@@ -1,0 +1,58 @@
+<p> Shop data </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Shop Name" ng-model="neve" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Permit number" ng-model="esz" />
+        </div>
+    </div> 
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Address" ng-model="cim" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Phone number" ng-model="tel" />
+        </div>
+    </div> 
+
+    <br>
+
+    <div class="row">
+        <!--
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <button ng-click="ugyfelSlt();" class="button find">Find</button>
+        </div>
+        -->
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <button ng-click="ugyfelUpd();" class="button update">Update</button>
+        </div>
+    </div>   
+</div>
+</form>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <th>Shop Name&nbsp;</th>
+    <th>Permit number&nbsp;</th>
+    <th>Address&nbsp;</th>
+    <th>Phone number&nbsp;</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in result">
+        <!--<td><a href="#/select-grp/{{item.kod}}" class="btn"><i class="glyphicon glyphicon-eye-open">&nbsp; {{item.kod}} </i></a></td>-->
+        <td>{{item.neve}}</td>
+        <td>{{item.esz}}</td>
+        <td>{{item.cim}}</td>
+        <td>{{item.tel}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>

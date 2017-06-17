@@ -1,0 +1,37 @@
+<p> ECR </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<table cellspacing="5" cellpadding="5" width="100%">
+    <tr>
+        <td>
+            <label for="xky"> VAT id: </label>
+            <input id="xky" ng-model="d_xky" />
+        </td>
+        <td>
+        	<label for="kod"> ECR id: </label>
+        	<input id="kod" ng-model="d_kod" />
+        </td>
+        <td>
+        	<label for="inf"> ECR info: </label>
+        	<input id="inf" ng-model="d_inf" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button ng-click="taxdptSlt();" class="btn btn-primary">Find</button>
+        </td>
+        <td> 
+            <button ng-click="taxdptUpd();" class="btn btn-warning">Update</button>
+        </td>
+        <td>
+            <button ng-click="taxdptIns();" class="btn btn-warning">Add</button>
+        </td>
+        <td>
+            <button ng-click="taxdptDel();" class="btn btn-warning">Delete</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>

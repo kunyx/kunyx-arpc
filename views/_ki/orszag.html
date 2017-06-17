@@ -1,0 +1,37 @@
+<p> Country </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<table cellspacing="5" cellpadding="5" width="100%">
+    <tr>
+        <td>
+            <label for="nev"> Country name: </label>
+            <input id="nev" ng-model="o_nev" />
+        </td>
+        <td>
+        	<label for="kod"> Country code: </label>
+        	<input id="kod" ng-model="o_kod" />
+        </td>
+        <td>
+        	<label for="fek"> Country CCY: </label>
+        	<input id="fek" ng-model="o_fek" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button ng-click="orszagSlt();" class="btn btn-primary">Find</button>
+        </td>
+        <td> 
+            <button ng-click="orszagUpd();" class="btn btn-warning">Update</button>
+        </td>
+        <td>
+            <button ng-click="orszagIns();" class="btn btn-warning">Add</button>
+        </td>
+        <td>
+            <button ng-click="orszagDel();" class="btn btn-warning">Delete</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>

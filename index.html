@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+  
+   <meta  content="text/html; charset=utf-8"  http-equiv="content-type">
+    <title>Kunyx</title>
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta  http-equiv="X-UA-Compatible"  content="IE=edge">
+    <meta  name="viewport"  content="width=device-width, initial-scale=1">
+    <!--style-->
+    <link  href="styles/bootstrap.css"  rel="stylesheet"  type="text/css">
+    <link  href="styles/style.css"  rel="stylesheet"  type="text/css">
+    <!-- end of styles -->
+    <script type="text/javascript">
+      function toggleClass(elem, theClass, newState) {
+        var matchRegExp = new RegExp('(?:^|\\s)' + theClass + '(?!\\S)', 'g');
+        var add=(arguments.length>2 ? newState : (elem.className.match(matchRegExp) == null));
+        elem.className=elem.className.replace(matchRegExp, ''); // clear all
+        if (add) elem.className += ' ' + theClass;
+      }
+      function tomorrow() {
+        var today = new Date();
+        var holnap = new Date();
+        holnap.setDate(today.getDate()+1);
+        var dd = holnap.getDate();
+        var mm = holnap.getMonth()+1; //January is 0!
+        var yyyy = holnap.getFullYear();
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+        holnap = yyyy+mm+dd;
+        return holnap;
+      }
+    </script>
+  </head>
+  <!--body ng-app="xrpcJsonApp" data-spy="scroll" data-target=".navbar" data-offset="100"-->
+  <body data-target=".navbar" data-offset="100">
+    <!-- fejlec kezdete-->
+    <div class="fejlec">
+      <!--navigation-start-->
+      <nav class="navbar navbar-inverse navbar-nav navbar-default">
+        <div class="wrapper container-fluid my-navbar">
+          <div class="navbar-header logo">
+            <a class="navbar-brand" href="http://system-kunyx.rhcloud.com/"><h1>Kunyx</h1></a>
+          </div>
+          <div>
+            <button  type="button"  class="navbar-toggle" data-toggle="collapse"  data-target="#navbar-sm-coll"> 
+              <span class="sr-only"></span> <span  class="icon-bar"></span><span class="icon-bar"></span>
+              <span  class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse"  id="navbar-sm-coll">
+            <ul id="termek_kezelo" class="nav navbar-nav my-navbar termek_kezelo_lathatalan">
+              <li><a href="#/help">Help</a></li>
+              <li><a href="#/taxkey">VAT</a></li>
+              <li><a href="#/group">Group</a></li>
+              <li><a href="#/termek">Product</a></li>
+              <li><a href="#/ugyfel">Shop info</a></li>
+              <li><a href="#/backup">Data backup</a></li>
+              <li><a href="#/macpar">MAC pairs</a></li>
+              <li><a href="#/devemu">Device emulator</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--navigation-end-->
+    </div>
+    <!--fejlec vege-->
+     
+<!--main-start-->
+    <div class="main" ng-app="xrpcJsonApp">
+        <div ng-view> 
+        <!--dynamic-view-->
+        </div>
+    </div>
+<!--main-end-->
+
+    <!--lablec kezdete-->
+    <div  class="lablec">
+      <div  class="row">
+        <div  class="col-lg-6 col-md-6 col-sm-5 col-xs-4 text-left"> 
+          <img  class="img-kunyx"  src="images/kunyx.png" alt="Kunyx">
+          <div class="termek_kezelo_lathatalan">
+            <a href="#/help">Help</a>
+            <a href="#/taxkey">VAT</a>
+            <a href="#/group">Group</a>
+            <a href="#/termek">Product</a>
+            <a href="#/ugyfel">Shop info</a>
+            <a href="#/backup">Data backup</a>
+            <a href="#/macpar">MAC pairs</a>
+            <a href="#/devemu">Device emulator</a>
+          </div>
+        </div>
+        <div  class="col-lg-6 col-md-6 col-sm-7 col-xs-8 text-right">
+          <p class="p1 v-center">Kunyx System © 2016 <br> Developed by Istvan Kun | Designed by Aron Kun </p>
+        </div>
+      </div>
+    </div>
+    <!--lablec vege-->
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!--<script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>-->
+    <!-- end of Google Analyticss -->
+
+    <!-- scripts dir -->
+    <script src="scripts/angular/angular.js"></script>
+    <script src="scripts/jquery/dist/jquery.js"></script>
+    <script src="scripts/angular-uuid/uuid.min.js"></script>
+    <script src="scripts/angular-route/angular-route.js"></script>
+    <script src="scripts/angular-resource/angular-resource.js"></script>
+    <script src="scripts/angular-jsonrpc-client/src/angular-jsonrpc-client.js"></script>
+	<script src="scripts/paho-mqtt-js/src/mqttws31.js"></script>
+    <script src="scripts/angular-paho/dist/angular-paho.js"></script>
+    <script src="kunyx/app.js"></script>
+    <script src="kunyx/main.js"></script>
+    <script src="kunyx/backup.js"></script>
+    <script src="kunyx/login.js"></script>
+    <script src="kunyx/taxkey.js"></script>
+    <script src="kunyx/group.js"></script>
+    <script src="kunyx/termek.js"></script>
+    <script src="kunyx/ugyfel.js"></script>
+    <script src="kunyx/macpar.js"></script>
+    <script src="kunyx/devemu.js"></script>
+    <!--
+    <script src="js/bootstrap.min.js"></script>
+    <script src="scripts/angular-touch/angular-touch.js"></script>
+    <script src="scripts/angular-sanitize/angular-sanitize.js"></script>
+    <script src="scripts/angular-websql/angular-websql.js"></script>
+    -->
+    <!-- end of scripts -->
+</body>
+</html>

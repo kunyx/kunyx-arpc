@@ -1,0 +1,19 @@
+<p> Login </p>
+
+<form role="form" name="xForm" class="form-horizontal">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+   	<label for="xun"> User id: </label>
+   	<input id="xun" ng-model="xun" />
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+   	<label for="xpw"> User password: </label>
+   	<input id="xpw" ng-model="xpw" />
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+    <button ng-click="userLogin();" class="btn btn-primary">Login</button>
+</div>
+</form>
+<br/><br/><br/><br/><br/>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>
