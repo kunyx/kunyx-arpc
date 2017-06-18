@@ -2,10 +2,10 @@
 
 angular.module('xrpcJsonApp')
 .controller('postextCtrl', ['$scope', 'jsonrpc', '$rootScope', function($scope, jsonrpc, $rootScope) {
-  var params = {szoveg_1: '', Szoveg_2: ''};
+  var params = {SZOVEG_1: '', SZOVEG_2: ''};
   $scope.postextSlt = function () {
-    if ($scope.szoveg_1 != undefined) params.szoveg_1 = $scope.szoveg_1;
-    if ($scope.Szoveg_2 != undefined) params.Szoveg_2 = $scope.Szoveg_2;
+    if ($scope.szoveg_1 != undefined) params.SZOVEG_1 = $scope.szoveg_1;
+    if ($scope.szoveg_2 != undefined) params.SZOVEG_2 = $scope.szoveg_2;
     console.log(params);
     jsonrpc
     .request('postext_slt', params)
@@ -19,8 +19,8 @@ angular.module('xrpcJsonApp')
     });
   }
   $scope.postextUpd = function () {
-    params.szoveg_1 = $scope.szoveg_1;
-    params.Szoveg_2 = $scope.Szoveg_2;
+    params.SZOVEG_1 = $scope.szoveg_1;
+    params.SZOVEG_2 = $scope.szoveg_2;
     console.log(params);
     jsonrpc
     .request('postext_upd', params)
@@ -35,9 +35,17 @@ angular.module('xrpcJsonApp')
       alert(error);
     });
   }
+  $scope.selectPostxt = function (item) {
+    $rootScope.ptx_ = item.szoveg_1;
+    $scope.szoveg_1 = item.szoveg_1;
+    $scope.szoveg_2 = item.szoveg_2;
+    console.log('ptx: ' + $rootScope.ptx_);
+  }
+}]);
+/*
   $scope.postextIns = function () {
-    params.szoveg_1 = $scope.szoveg_1;
-    params.Szoveg_2 = $scope.Szoveg_2;
+    params.SZOVEG_1 = $scope.szoveg_1;
+    params.SZOVEG_2 = $scope.szoveg_2;
     console.log(params);
     jsonrpc
     .request('postext_ins', params)
@@ -53,7 +61,7 @@ angular.module('xrpcJsonApp')
     });
   }
   $scope.postextDel = function () {
-    params.szoveg_1 = $scope.szoveg_1;
+    params.SZOVEG_1 = $scope.szoveg_1;
     console.log(params);
     jsonrpc
     .request('postext_del', params)
@@ -68,11 +76,4 @@ angular.module('xrpcJsonApp')
       alert(error);
     });
   }
-  $scope.selectPtxt = function (item) {
-    $rootScope.grp_ = item.szoveg_1;
-    $scope.szoveg_1 = item.szoveg_1;
-    $scope.Szoveg_2 = item.Szoveg_2;
-    console.log('grp: ' + $rootScope.grp_);
-    console.log('txk: ' + $rootScope.txk_);
-  }
-}]);
+*/

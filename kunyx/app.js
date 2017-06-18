@@ -7,6 +7,7 @@ angular.module('xrpcJsonApp', ['ngRoute', 'angular-jsonrpc-client'])
   $rootScope.txk_ = '';
   $rootScope.grp_ = '';
   $rootScope.dbu_ = '';
+  $rootScope.ptx_ = '';
 })
 .config(function(jsonrpcConfigProvider) {
   jsonrpcConfigProvider.set({
@@ -111,6 +112,7 @@ angular.module('xrpcJsonApp', ['ngRoute', 'angular-jsonrpc-client'])
     replace: true
   };
 });
+
 /***************
     .when('/sysdt', {
       templateUrl: 'views/sysdt.html',
