@@ -6,7 +6,7 @@ angular.module('xrpcJsonApp')
   $scope.postextSlt = function () {
     if ($scope.szoveg_1 != undefined) params.SZOVEG_1 = $scope.szoveg_1;
     if ($scope.szoveg_2 != undefined) params.SZOVEG_2 = $scope.szoveg_2;
-    console.log(params);
+    //console.log(params);
     jsonrpc
     .request('postext_slt', params)
     .then(function(result) {
@@ -36,9 +36,9 @@ angular.module('xrpcJsonApp')
     });
   }
   $scope.selectPostxt = function (item) {
-    $rootScope.ptx_ = item.szoveg_1;
-    $scope.szoveg_1 = item.szoveg_1;
-    $scope.szoveg_2 = item.szoveg_2;
+    $rootScope.ptx_ = item.SZOVEG_1;
+    $scope.szoveg_1 = item.SZOVEG_1;
+    $scope.szoveg_2 = item.SZOVEG_2;
     console.log('ptx: ' + $rootScope.ptx_);
   }
 }]);
