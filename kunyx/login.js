@@ -14,7 +14,7 @@ angular.module('xrpcJsonApp')
         $rootScope.dbu_ = params.xun;
         var elem = document.getElementById('termek_kezelo');
         toggleClass(elem, 'termek_kezelo_lathatalan', false);
-        window.location = "http://kunyx/_ang-rpc/index.html#/";
+        window.location = "http://kunyx/kunyx-arpc/index.html#/";
       }
       $scope.result = result.user_login;
       console.log(result);
