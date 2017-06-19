@@ -2,7 +2,7 @@
 
 angular.module('xrpcJsonApp')
 .controller('postextCtrl', ['$scope', 'jsonrpc', '$rootScope', function($scope, jsonrpc, $rootScope) {
-  var params = {SZOVEG_1: '', SZOVEG_2: ''};
+  var params = {SZOVEG_1: 'kunyx', SZOVEG_2: 'kunyx'};
   $scope.postextSlt = function () {
     if ($scope.szoveg_1 != undefined) params.SZOVEG_1 = $scope.szoveg_1;
     if ($scope.szoveg_2 != undefined) params.SZOVEG_2 = $scope.szoveg_2;
