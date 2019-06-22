@@ -1,0 +1,46 @@
+<div class="subheader"> <h3>VAT</h3>  </div>
+
+<form role="form" name="xForm" class="form-horizontal">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <input class="input" placeholder="VAT id:" ng-model="kod" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <input class="input" placeholder="Tax rate:" ng-model="afa" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <input class="input" placeholder="Period:" ng-model="inf" />
+            </div>    
+        </div> 
+        <br>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <button ng-click="stornoSlt();" class="button find">Find</button>
+            </div>
+                <button ng-click="stornoIns();" class="button add">Add</button>
+            </div> 
+        </div>   
+    </div>
+</form>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <th>VAT id&nbsp;</th>
+    <th>Tax rate &nbsp;</th>
+    <th>VAT information&nbsp;</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in result">
+        <td><button ng-click=selectStorno(item)> {{item.kod}} </button></td>
+        <td>{{item.afa}}</td>
+        <td>{{item.inf}}</td>
+        <td>
+            <button ng-click="stornoUpd();" class="button update">Update</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p> result {{result}} </p>
+<p> error {{error}} </p>

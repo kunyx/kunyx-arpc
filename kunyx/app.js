@@ -1,13 +1,21 @@
 'use strict';
 
-//angular.module('xrpcJsonApp', ['ngRoute', 'angular-jsonrpc-client']) 'angular-scroll'='duScroll' , 'smoothScroll'
 //angular.module('xrpcJsonApp', ['ngRoute', 'angular-jsonrpc-client', 'angularPaho'])
 angular.module('xrpcJsonApp', ['ngRoute', 'angular-jsonrpc-client'])
 .run(function($rootScope) {
   $rootScope.txk_ = '';
-  $rootScope.grp_ = '';
-  $rootScope.dbu_ = '';
+  //$rootScope.grp_ = '';
   $rootScope.ptx_ = '';
+  $rootScope.dbu_ = $rootScope.dbu_ != undefined ? $rootScope.dbu_ : undefined;
+    console.log('$rootScope.dbu_', $rootScope.dbu_);
+  if ( $rootScope.dbu_ != undefined) {
+    $rootScope.elem1 = document.getElementById('termek_kezelo');
+    toggleClass($rootScope.elem1, 'invisible', false);
+    $rootScope.elem2 = document.getElementById('logout_button');
+    toggleClass($rootScope.elem2, 'invisible', false);
+    $rootScope.elem2 = document.getElementById('login_button');
+    toggleClass($rootScope.elem2, 'invisible', true);
+  }
 })
 .config(function(jsonrpcConfigProvider) {
   jsonrpcConfigProvider.set({
@@ -40,6 +48,11 @@ angular.module('xrpcJsonApp', ['ngRoute', 'angular-jsonrpc-client'])
       templateUrl: 'views/termek.html',
       controller: 'termekCtrl',
       controllerAs: 'termek'
+    })
+    .when('/storno', {
+      templateUrl: 'views/storno.html',
+      controller: 'stornoCtrl',
+      controllerAs: 'storno'
     })
     .when('/ugyfel', {
       templateUrl: 'views/ugyfel.html',
@@ -114,6 +127,25 @@ angular.module('xrpcJsonApp', ['ngRoute', 'angular-jsonrpc-client'])
 });
 
 /***************
+.directive('userLogout', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'index.html',
+            scope: {},
+            //link: function(scope) {
+            controller: [ "$scope", function($scope) {
+                console.log($rootScope.dbu_);
+                $scope.userLogout= function () { 
+                  $rootScope.dbu_ = undefined;
+                  setTimeout(1000);
+                  window.location = "http://kunyx/kunyx-arpc/#/login";
+                  console.log('OK');
+                }
+            }]
+        };
+    })
+
+
     .when('/sysdt', {
       templateUrl: 'views/sysdt.html',
       controller: 'sysdtCtrl',

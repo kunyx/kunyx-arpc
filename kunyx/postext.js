@@ -6,7 +6,7 @@ angular.module('xrpcJsonApp')
   $scope.postextSlt = function () {
     if ($scope.szoveg_1 != undefined) params.SZOVEG_1 = $scope.szoveg_1;
     if ($scope.szoveg_2 != undefined) params.SZOVEG_2 = $scope.szoveg_2;
-    //console.log(params);
+    console.log(params);
     jsonrpc
     .request('postext_slt', params)
     .then(function(result) {
@@ -26,11 +26,13 @@ angular.module('xrpcJsonApp')
     .request('postext_upd', params)
     .then(function(result) {
       $scope.result = result.postext_upd;
-      console.log(result);
+      //console.log(result);
+      alert(result);
     })
     .catch(function(error) {
       $scope.error = error;
-      console.log(error);
+      //console.log(error);
+      alert(error);
     });
   }
   $scope.selectPostxt = function (item) {
@@ -40,7 +42,6 @@ angular.module('xrpcJsonApp')
     console.log('ptx: ' + $rootScope.ptx_);
   }
 }]);
-
 /*
   $scope.postextIns = function () {
     params.SZOVEG_1 = $scope.szoveg_1;

@@ -19,17 +19,25 @@
         elem.className=elem.className.replace(matchRegExp, ''); // clear all
         if (add) elem.className += ' ' + theClass;
       }
-      function tomorrow() {
-        var today = new Date();
+      function mainap() {
+        var mainap = new Date();
+        var dd = mainap.getDate();
+        var mm = mainap.getMonth()+1; //a 0=Januar!
+        var yyyy = mainap.getFullYear();
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+        return yyyy+mm+dd;
+      }
+      function holnap() {
+        var mainap = new Date();
         var holnap = new Date();
-        holnap.setDate(today.getDate()+1);
+        holnap.setDate(mainap.getDate()+1);
         var dd = holnap.getDate();
-        var mm = holnap.getMonth()+1; //January is 0!
+        var mm = holnap.getMonth()+1; //a 0=Januar!
         var yyyy = holnap.getFullYear();
         if (dd < 10) dd = '0' + dd;
         if (mm < 10) mm = '0' + mm;
-        holnap = yyyy+mm+dd;
-        return holnap;
+        return yyyy+mm+dd;;
       }
     </script>
   </head>
@@ -41,7 +49,7 @@
       <nav class="navbar navbar-inverse navbar-nav navbar-default">
         <div class="wrapper container-fluid my-navbar">
           <div class="navbar-header logo">
-            <a class="navbar-brand" href="http://system-kunyx.rhcloud.com/"><h1>Kunyx</h1></a>
+            <a class="navbar-brand" href="#/"><h1>Kunyx</h1></a>
           </div>
           <div>
             <button  type="button"  class="navbar-toggle" data-toggle="collapse"  data-target="#navbar-sm-coll"> 
@@ -50,18 +58,22 @@
             </button>
           </div>
           <div class="collapse navbar-collapse"  id="navbar-sm-coll">
-            <ul id="termek_kezelo" class="nav navbar-nav my-navbar termek_kezelo_lathatalan">
+            <ul id="termek_kezelo" class="nav navbar-nav my-navbar invisible">
               <li><a href="#/help">Help</a></li>
               <li><a href="#/taxkey">VAT</a></li>
               <li><a href="#/group">Group</a></li>
               <li><a href="#/termek">Product</a></li>
               <li><a href="#/ugyfel">Shop info</a></li>
-              <li><a href="#/backup">Data backup</a></li>
+              <li><a href="#/storno">Storno</a></li>              
               <li><a href="#/macpar">MAC pairs</a></li>
               <li><a href="#/postext">POS text</a></li>
+              <li><a href="#/backup">Admin</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a id="login_button" href="#/login" class="button login pull-right"> Login</a></li>
+                <li>
+                <a id="logout_button" href="#/login" onclick="location.reload()" class="button login pull-right invisible">Logout</a></li>
+                <!--glyphicon glyphicon-log-in-->
             </ul>
           </div>
         </div>
@@ -71,30 +83,33 @@
     <!--fejlec vege-->
      
 <!--main-start-->
+      <div class="main_wrapper wrapper">
     <div class="main" ng-app="xrpcJsonApp">
         <div ng-view> 
         <!--dynamic-view-->
         </div>
     </div>
+      </div>
 <!--main-end-->
 
     <!--lablec kezdete-->
     <div  class="lablec">
       <div  class="row">
-        <div  class="col-lg-6 col-md-6 col-sm-5 col-xs-4 text-left"> 
-          <img  class="img-kunyx"  src="images/kunyx.png" alt="Kunyx">
+        <div  class=" text-left"> 
+          <!--<img  class="img-kunyx"  src="images/kunyx.png" alt="Kunyx">-->
           <div class="termek_kezelo_lathatalan">
             <a href="#/help">Help</a>
             <a href="#/taxkey">VAT</a>
             <a href="#/group">Group</a>
             <a href="#/termek">Product</a>
             <a href="#/ugyfel">Shop info</a>
+            <a href="#/storno">Storno</a>
             <a href="#/backup">Data backup</a>
             <a href="#/macpar">MAC pairs</a>
             <a href="#/postext">POS text</a>
           </div>
         </div>
-        <div  class="col-lg-6 col-md-6 col-sm-7 col-xs-8 text-right">
+        <div  class=" text-right">
           <p class="p1 v-center">Kunyx System © 2016 <br> Developed by Istvan Kun | Designed by Aron Kun </p>
         </div>
       </div>
@@ -128,6 +143,7 @@
     <script src="kunyx/group.js"></script>
     <script src="kunyx/termek.js"></script>
     <script src="kunyx/ugyfel.js"></script>
+    <script src="kunyx/storno.js"></script>
     <script src="kunyx/macpar.js"></script>
     <script src="kunyx/postext.js"></script>
     <!--

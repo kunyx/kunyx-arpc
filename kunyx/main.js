@@ -1,6 +1,5 @@
 'use strict';
 
 angular.module('xrpcJsonApp')
-.controller('MainCtrl', function() {
-  }
-);
+.controller('MainCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+}]);

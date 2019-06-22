@@ -1,48 +1,137 @@
-<p> Group </p>
+<div class="subheader"> <h3>Group</h3>  </div> 
 
 <form role="form" name="xForm" class="form-horizontal">
-<div class="container-fluid">
-<div class="row">
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <input class="input" placeholder="Group id:" ng-model="kod" />
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <input class="input" placeholder="Name:" ng-model="nev" />
-</div>
-</div>
-<br> 
-<div class="row">
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-    <button ng-click="groupSlt();" class="button find">Find</button>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-    <button ng-click="groupUpd();" class="button update">Update</button>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-    <button ng-click="groupIns();" class="button add">Add</button>
-</div> 
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-    <button ng-click="groupDel();" class="button delete">Delete</button>
-</div>    
-</div>   
-</div>
+    <!-- 1. szint: ng-show="true" -->
+    <div class="row" ng-show="true">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <select class="myDDL" ng-model="x_nev1"
+                ng-change="szint1_valt()">
+                <option value='add_new'>Add new</option>
+                <option ng-repeat="grp in ddlszint_1" value="{{grp.NEV}}">{{grp.NEV}}</option>
+            </select>
+        </div>  
+        <!-- <input class="input" placeholder="Group id:" ng-model="kod" /> -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Name" ng-model="nev_1" />
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('add')">
+                <button ng-click="groupIns();" class="button add">Add</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('upd')">
+                <button ng-click="groupUpd();" class="button update">Update</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('del')">
+                <button ng-click="groupDel();" class="button delete">Delete</button>
+            </div>
+        </div>
+    </div>
+    <!-- 2. szint: -->
+    <div class="row" ng-show="x_nev1 == nev_1">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <select class="myDDL" ng-model="x_nev2"
+                ng-change="szint2_valt()">
+                <option value='add_new'>Add new</option>
+                <option ng-repeat="grp in ddlszint_2" value="{{grp.NEV}}">{{grp.NEV}}</option>
+            </select>
+        </div>
+        <!-- <input class="input" placeholder="Group id:" ng-model="kod" /> -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Name" ng-model="nev_2" /> 
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('add')">
+                <button ng-click="groupIns();" class="button add">Add</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('upd')">
+                <button ng-click="groupUpd();" class="button update">Update</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('del')">
+                <button ng-click="groupDel();" class="button delete">Delete</button>
+            </div>
+        </div>
+    </div>
+    <!-- 3. szint: -->
+    <div class="row" ng-show="x_nev2 == nev_2">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <select class="myDDL" ng-model="x_nev3"
+                ng-change="szint3_valt()">
+                <option value='add_new'>Add new</option>
+                <option ng-repeat="grp in ddlszint_3" value="{{grp.NEV}}">{{grp.NEV}}</option>
+            </select>
+        </div>
+        <!-- <input class="input" placeholder="Group id:" ng-model="kod" /> -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input class="input" placeholder="Name" ng-model="nev_3" />  
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('add')">
+                <button ng-click="groupIns();" class="button add">Add</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('upd')">
+                <button ng-click="groupUpd();" class="button update">Update</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" ng-show="gomb_lathato('del')">
+                <button ng-click="groupDel();" class="button delete">Delete</button>
+            </div>
+        </div>   
+    </div>
 </form>
 
-<div class="col-md-12" ng-show="result.length > 0">
+<!--
+<div class="col-md-12">
     <table class="table table-striped table-bordered">
         <thead>
         <th>Category id&nbsp;</th>
         <th>Category name&nbsp;</th>
         </thead>
-        <tbody>
-        <tr ng-repeat="item in result">
-            <td><button ng-click=selectGrp(item)> {{item.kod}} </button></td>
-            <td>{{item.nev}}</td>
-        </tr>
+        <tbody ng-show="result.length > 0">
+            <tr ng-repeat="item in result">
+                <td><button ng-click=selectGrp(item)> {{item.kod}} </button></td>
+                <td>{{item.nev}}</td>
+                <td ng-show="upd_ervenyes(item)" >
+                    <button ng-click="groupUpd();" class="button update">Update</button>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
+-->
+
 <!--
 <p> result {{result}} </p>
 <p> error {{error}} </p>
+
+<script>
+    $$(function(){
+        var fileInput = $('.upload-file');
+        var maxSize = fileInput.data('max-size');
+        $('.upload-form').submit(function(e){
+            if(fileInput.get(0).files.length){
+                var fileSize = fileInput.get(0).files[0].size; // in bytes
+                if(fileSize>maxSize){
+                    alert('file size is more than ' + maxSize + ' bytes');
+                    return false;
+                }else{
+                    alert('file size is correct - '+fileSize+' bytes');
+                }
+            }else{
+                alert('Please select the file to upload');
+                return false;
+            }
+        });
+    });
+</script>
+-->
+<!--
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+        <button ng-click="groupSlt();" class="button find">Find</button>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">        
+                <label>Display as selectable group</label><input type="checkbox" id="inFront" name="inFront" ng-model="ModelData.inFront"/>
+                <div class="form-group" ng-show="ModelData.inFront">
+                    <form  class="upload-form">
+                        <input class="upload-file" data-max-size="2048" type="file" >
+                        <input type=submit>
+                    </form>
+                </div>
+        </div> 
+    </div>
 -->

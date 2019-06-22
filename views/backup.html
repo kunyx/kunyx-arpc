@@ -1,6 +1,23 @@
-<p> Kunyx system data backup </p>
-
-<a class="btn" ng-click="downloadKunyxJSON()" ng-href="{{ url }}">Download backuped data of Kunyx System</a>
+<div class="subheader"> <h3> Kunyx system data backup </h3>  </div>
+<a class="button add" ng-click="downloadKunyxJSON()" ng-href="{{ url }}">Download backuped data of Kunyx System</a>
 
 <br/>
-<p> kunyx {{kunyx}} </p>
+
+<!--<p> kunyx {{kunyx}} </p>-->
+
+<br/>
+<div class="subheader"> <h3> Kunyx system mount driver </h3>  </div>
+<form action="">
+<label> Mount database flashdrive </label> <input type="radio" id="" name="mount" ng-checked="true" ng-model="string"
+       value="string"  class="" /> <br/>
+       <label> Unmount database flashdrive </label> <input type="radio" id="" name="mount" ng-checked="false" ng-model="string"
+       value="string"  class="" />
+</form>
+<br/>
+<div class="subheader"> <h3> Kunyx system Restart/Halt </h3>  </div>
+<div> 
+<label> System Restart </label>
+<button ng-click="" class="button find">Restart</button>
+<label> System Shut down </label>
+<button ng-click="" class="button delete">Shut down</button>
+</div>

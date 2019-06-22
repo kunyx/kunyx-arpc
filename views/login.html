@@ -1,16 +1,20 @@
-<p> Login </p>
+<div class="subheader"> <h3>Login</h3>  </div>
 
 <form role="form" name="xForm" class="form-horizontal">
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-   	<label for="xun"> User id: </label>
-   	<input id="xun" ng-model="xun" />
+<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+   	<label class="control-label col-sm-4" for="xun"> User id: </label>
+    <div class="col-sm-8">
+   	<input class="form-control" id="xun" ng-model="xun" />
 </div>
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-   	<label for="xpw"> User password: </label>
-   	<input id="xpw" ng-model="xpw" />
 </div>
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-    <button ng-click="userLogin();" class="btn btn-primary">Login</button>
+<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+   	<label class="control-label col-sm-4" for="xpw"> User password: </label>
+    <div class="col-sm-8">
+   	<input class="form-control" type="password" id="xpw" ng-model="xpw" />
+</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <button ng-click="userLogin();" class="button login pull-right">Login</button>    
 </div>
 </form>
 <br/><br/><br/><br/><br/>

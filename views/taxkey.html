@@ -1,32 +1,38 @@
-<p> VAT </p>
+<div class="subheader"> <h3>VAT</h3>  </div>
 
 <form role="form" name="xForm" class="form-horizontal">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <input class="input" placeholder="VAT id:" ng-model="kod" />
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <!-- <input class="input" placeholder="VAT id:" ng-model="kod" /> -->
+                <!-- https://www.w3schools.com/angular/angular_select.asp -->
+                <select ng-model="afa_afa" ng-change="onDdl_change()">
+                    <option value='add_new' ng-selected="true">Add new</option>
+                    <option ng-repeat="afa in afaList" value="{{afa.afa}}" ng-selected="false">{{afa.afa}}</option>
+                </select>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <input class="input" placeholder="Tax rate:" ng-model="afa" />
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <input class="input" placeholder="Period:" ng-model="inf" />
-            </div>    
-        </div> 
-        <br>
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <button ng-click="taxkeySlt();" class="button find">Find</button>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <button ng-click="taxkeyUpd();" class="button update">Update</button>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <button ng-click="taxkeyIns();" class="button add">Add</button>
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <div class="col-lg-6">
+                            <input class="input" placeholder="Tax rate:" ng-model="afa" />
+                        </div>
+                        <div class="col-lg-6">
+                            <input class="input" placeholder="Period:" ng-model="inf" />
+                        </div>   
+                        <br>
+                        <div class="col-lg-6"> </div>
+                <div class="col-lg-12" ng-if="upd_or_add('upd')">
+                    <button ng-click="taxkeyUpd();" class="button update">Update</button>
+                </div> 
+                <div class="col-lg-12" ng-if="upd_or_add('add')" >
+                    <button ng-click="taxkeyIns();" class="button add">Add</button>
+                </div> 
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <button ng-click="taxkeyDel();" class="button delete">Delete</button>
-            </div>
+        </div> 
+        
+        <div class="row">
+              
+                
+           
         </div>   
     </div>
 </form>
@@ -42,10 +48,12 @@
         <td><button ng-click=selectTxk(item)> {{item.kod}} </button></td>
         <td>{{item.afa}}</td>
         <td>{{item.inf}}</td>
+        <td >
+            
+        </td>
     </tr>
     </tbody>
 </table>
-<!--
+
 <p> result {{result}} </p>
 <p> error {{error}} </p>
--->

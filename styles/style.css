@@ -1,5 +1,5 @@
 .body {
-  	font-family: ;
+  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Impact, Charcoal, sans-serif; */
   	background: #DBFFDC;
 }
 /*Bootsrap corrections*/
@@ -21,6 +21,12 @@
     border:2px solid #80aa00;
 }
 */
+
+.main_wrapper{
+    width: 95%;
+    margin: 0 auto;
+    
+}
 .main {
 	position: relative;
 	overflow: auto; 
@@ -43,17 +49,19 @@
   	bottom: 0px;
   	left: 0px;
   	width:100%;
-  	min-height:50px;
+  	min-height:30px;
+    display: inline;
   	background:#0e2d01;
 }  
 .logo {
-  	position: relative;
+  	position: relative;    
   	left: 17px;
   	top: 12px;
   	width:100px;
   	height: 100px;
   	background: #a8fa9b;
   	border-radius: 60px;
+        border-style: inset;
   	border: 10px solid #0e4d01;
 }
 .banner {
@@ -136,9 +144,15 @@ button.delete {
     color: red;
    }
 
+.button.login{
+    margin-right: 30px;
+}
+
+
 /* Input style */
 .input{
-    font-family: Impact, fantasy;
+    font-family: "Lucida Grande", serif;
+    font-variant: small-caps;
 	font-size: 12px;
 	margin-bottom: 5px;
 	padding: 5px 5px;
@@ -172,9 +186,12 @@ button.delete {
 
 
 /* Menu style */
-.termek_kezelo_lathatalan {
+
+.invisible {
+    display: none;
 	visibility: hidden;
 }
+
 
 .mynavbar {
 	text-align:center;
@@ -208,22 +225,22 @@ button.delete {
 
 .navbar-default .navbar-text {
   font-family: Impact, Charcoal, sans-serif;
+        font-variant: small-caps;
   color: #fff;
 }
 .navbar-default .navbar-nav > li > a {
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: small-caps;
   margin: 5px; 
   padding: 5px;
   color: #fff;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  font-family: ;
-
   color: #9bb1b5;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: ##9bb1b5;
-  font-family: Impact, Charcoal, sans-serif;
+  color: #9bb1b5;
+  font-family:Impact, Charcoal, sans-serif;
 
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -243,7 +260,6 @@ button.delete {
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   font-family: Impact, Charcoal, sans-serif;
-  width:;
   margin: 1em;
   margin-left: 72px;
   padding: 1em;
@@ -257,7 +273,7 @@ button.delete {
   color: #fff;
 }
 .navbar-default .navbar-link:hover {
-  color: ##9bb1b5;
+  color: #9bb1b5;
   font-family: Impact, Charcoal, sans-serif;
 }
 .navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
@@ -274,6 +290,17 @@ button.delete {
   position: relative; 
   margin: 5px auto !important;
   padding: 8px !important;
+}
+
+a.ng-binding {
+    font-variant: small-caps;
+}
+
+a.navbar-brand h1 {
+    font-family: Lucida Grande;
+    font-size: 26px;
+    font-variant: small-caps;
+    font-weight: bold;    
 }
 
 /* centered */
@@ -320,6 +347,11 @@ button.delete {
 
 }
 
+.myDDL {
+	padding: 5px;
+	margin-left: 20px;
+	width: 90%;	
+}
 
 
 /*fonts*/
@@ -341,7 +373,6 @@ a:active {
 }
 
 h1{
-    font-family: ;
     font-size: 28px;
     text-align: left !important;
     color: #0e4d01;
@@ -351,8 +382,16 @@ h1:hover{
 }
 
 
+div.subheader
+{
+    background: #5cb85c;
+    padding: 3px;
+    padding-left: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    
+}
  h2{
-    font-family: ;
 		text-align: left !important;
 		padding-left: 1em;
     margin: 1em;
@@ -360,18 +399,15 @@ h1:hover{
 }
 
 h3{
-    font-family:  ;
 		text-align: left !important;
 		padding-left: 1em;
 		color: #fff;
 }
 h4{
-    font-family:  ;
 		text-align: left !important;
 		color: #a9db29;
 }
 h5{
-    font-family:  ;
 		text-align: left !important;
 		color: #a9db29;
 }
@@ -388,7 +424,6 @@ h5{
     color: #a9db29;
 }
 .p3 {
-    font-family: ;
 		text-align: left !important;
 		padding-left: 1em;
 		color: #b1cacf;
@@ -450,4 +485,38 @@ h5{
     position: relative;
     overflow: hidden;
 	color: #fff;
+}
+
+/* Text */
+
+
+
+.help_text {
+        padding: 15px;
+    margin: 5px;
+}
+
+label {
+    font-variant: small-caps;
+}
+
+
+
+/*Tables*/
+
+.table{
+        margin-top: 18px;
+        width: 98%;
+        padding-left: 5%;
+        padding-right: 5%;
+        box-shadow: 5px 5px 5px #888888;
+}
+
+
+.table thead tr {
+    font-variant: small-caps;
+    border-style: outset;
+    text-transform: lowercase;
+    padding-left: 12px;
+    box-shadow: 8px 8px 5px #888888;
 }
